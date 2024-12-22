@@ -100,7 +100,7 @@ const App = () => {
         </select>
         <button
           type="submit"
-          className="bg-green-500 text-white p-2 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400"
+          className="bg-green-500 text-white p-2 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 mb-2"
         >
           Rechercher
         </button>
@@ -126,9 +126,9 @@ const App = () => {
       )}
 
       {/* Pagination */}
-      <div className="flex justify-center gap-4 mt-6">
+      <div className="flex justify-center gap-4 mt-6 ">
         <button
-          className="bg-gray-300 p-2 rounded-lg text-gray-700 hover:bg-gray-400 focus:outline-none"
+          className="bg-gray-300 p-2 rounded-lg text-gray-700 hover:bg-gray-400 focus:outline-none "
           onClick={prevPage}
           disabled={currentPage === 1}
         >
@@ -159,7 +159,7 @@ const App = () => {
 
           {/*  Droits d'auteur  */}
           <p className="mt-6 text-xs text-gray-200">
-            © 2024 Recette App . Tous droits réservés. Sara DERDAK
+            © 2024 Recette App . Tous droits réservés. Crée par  <a href="https://github.com/Sara-Derdak">Sara DERDAK</a>
           </p>
         </div>
       </footer>
