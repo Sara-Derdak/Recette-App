@@ -1,29 +1,18 @@
-const RecipeCard = ({ recipe, toggleFavorite, isFavorite }) => {
-    return (
-      <div className="max-w-sm rounded overflow-hidden shadow-lg border">
-        <img className="w-full h-48 object-cover" src={recipe.image} alt={recipe.label} />
-        <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{recipe.label}</div>
-          <p className="text-gray-700 text-base">
-            <strong>Calories :</strong> {Math.round(recipe.calories)} kcal
-          </p>
-          <ul className="text-gray-600 text-sm mt-2">
-            {recipe.ingredients.map((ingredient, index) => (
-              <li key={index}>{ingredient.text}</li>
-            ))}
-          </ul>
-          <button
-            onClick={() => toggleFavorite(recipe)}
-            className={`mt-2 p-2 rounded ${
-              isFavorite ? 'bg-red-500 text-white' : 'bg-gray-200'
-            }`}
-          >
-            {isFavorite ? 'Retirer des Favoris' : 'Ajouter aux Favoris'}
-          </button>
-        </div>
+
+const RecipeCard = ({ recipe }) => {
+  return (
+    <div className="bg-white p-4 rounded-lg shadow-lg hover:shadow-2xl transition">
+      <img className="w-full h-48 object-cover rounded-lg" src={recipe.image} alt={recipe.label} />
+      <div className="mt-4">
+        <h3 className="text-xl font-semibold text-dark">{recipe.label}</h3>
+        <ul className="mt-2 space-y-2 text-gray-600">
+          {recipe.ingredients.slice(0, 5).map((ingredient, index) => (
+            <li key={index} className="text-sm">{ingredient.text}</li>
+          ))}
+        </ul>
       </div>
-    );
-  };
-  
-  export default RecipeCard;
-  
+    </div>
+  );
+};
+
+export default RecipeCard;
